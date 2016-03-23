@@ -6,3 +6,13 @@
 * 二
 * 三
 * 四
+
+### 声明
+
+```javascript
+var a=12;
+var b=13;
+var c=function(){
+	alert(3);
+}
+```

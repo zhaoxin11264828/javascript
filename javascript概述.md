@@ -91,35 +91,95 @@
 	dom对象
 	dom集合
 
-### 选取元素
+按照我们正常的编程思路
+第一步就是找出元素
+我们从document对象开始  利用它身上的方法
+找出我们需要的元素（dom元素 dom集合）
 
+
+
+
+
+### 选取元素
+* var el=document.createElement
 * var el=document.getElementById("") 返回拥有指定id名的一个对象引用
+* var el=document.querySelector()   和 ById 类似
 * var el=document.getElementsClassName("")返回拥有指定类名的对象的集合 存在兼容性问题 函数 getclass
 * var el=document.getElementsTagName("")
 返回拥有指定标签名的对象的集合
+*var el=document.getElementByName() 表单对象\
+* var el=document.querySelectorAll()
+
+
+经过这一步我们会得到一个dom元素获dom集合
+js 会用一个很大的对象来代表页面中我们看到的那个元素
+ dom集合
+ 在一个类数组对象中存储dom对象构成一个集合
+
 
 
 ### 筛选元素
+从一个dom对象开始，根据逻辑关系再去寻找dom对象
 nextSibling
+> 父元素
 *el.parentNode
+*el.parentElement
+> 子元素
 *el.childNodes
-*el.childNode
+*el.children
+
 *el.firstChild
+*el.firstElementChild
+
 *el.lastChild
-nextSibling
+*el.lastElementChild
+
+>兄弟元素
+* el.nextSibling
+* el.nextElementSibling
+
+* el.previousSibing
+* el.previousElementSibing
+
+### 操作属性(element)
+* el.setAttribute()
+* el.getAttribute()
+* el.removeAttribute()
+* el.hasAttribute()
+* el.className
+* el.id
+* el.classlist
+
+
+### 节点操作（node）
+方法
+* el.appendChild()
+* el.insertBefore()
+* el.removeChild()
+* el.replaceChild()
+* el.cloneNode()
+
 
 
 ### 操作样式
+*el.style
 el.style.color='red' 只能对行内样式进行获取 设置
 *el.className="one"
 兼容性问题获取 函数getstyle
-*curren
-*get
 
 
 
-###获取位置信息
-el.clientX
+
+###获取位置信息(htmlelement)
+* el.offsetWidth
+*  el.offsetHeight
+* el.offsetTop
+* el.offsetLeft
+* el.offsetParent//具有定位属性的父元素
+* el.innerHTML
+* el.getBoundingClietRect() //计算距离浏览器窗口位置的
+* getComputedStyle(el,null).width  //返回字符串
+<!-- <!-- el.clientX
 el.clientY
 el.screenX
 el.clientHeight
@@ -127,7 +187,7 @@ el.clientWidth
 el.clientLeft
 el.clientTop
 el.getEventLeft
-el.getEventTop
+el.getEventTop -->
 
 兼容性问题
 el.layerX
@@ -140,35 +200,47 @@ offsetTop
 scrollHeight
 scrollWidth
 scrollLeft
-scrollTop
+scrollTop -->
 
 
 
 
-### 操作属性
-el.style
-el.className
-el.id
 
-el.title
-el.tagName
-<img><a>
-el.src
-el.name
 
 
 
 ### 节点操作
-createElement
-appendChilds
-insertBefore
-removeChild
-replaceChild
-cloneNode
+方法
+* el.appendChild()
+* el.insertBefore()
+* el.removeChild()
+* el.replaceChild()
+* el.cloneNode()
 nodeName
 nodeValue
 nodeType
+createElement
 
+
+
+###get 和set 在dom对象中的使用
+var obj={a:1,b:2 ,
+set c(x){console.log(222)},
+get c(){return 234}}
+
+console.dir(obj)
+VM3015:2 Objecta: 1
+b: 2
+c: (...)
+get c: c()
+set c: c(x)
+__proto__: Object
+
+obj.c;
+234
+obj.c=890;
+VM2950:3 222
+890
 
 ### 获取元素信息
 获取内容

@@ -55,8 +55,10 @@
  	}
 
  	do{
+ 	执行语句
 
- 	}while()
+ 	}while(条件)
+ 	//先执行do语句 再判断条件  条件为真时 重复执行 为假时执行下一步
  	```
  ### 函数
  	function xx(){
@@ -101,13 +103,15 @@
 
 
 ### 选取元素
-* var el=document.createElement
-* var el=document.getElementById("") 返回拥有指定id名的一个对象引用
-* var el=document.querySelector()   和 ById 类似
+* var el=document.createElement("div")  
+"div"(要创建的元素类型)
+
+* var el=document.getElementById("") dom 对象 返回拥有指定id名的一个对象引用
+* var el=document.querySelector()   和 ById 类似 dom对象
 * var el=document.getElementsClassName("")返回拥有指定类名的对象的集合 存在兼容性问题 函数 getclass
 * var el=document.getElementsTagName("")
 返回拥有指定标签名的对象的集合
-*var el=document.getElementByName() 表单对象\
+*var el=document.getElementByName() 表单对象\  dom对象集合
 * var el=document.querySelectorAll()
 
 
@@ -142,13 +146,14 @@ nextSibling
 * el.previousElementSibing
 
 ### 操作属性(element)
-* el.setAttribute()
-* el.getAttribute()
-* el.removeAttribute()
-* el.hasAttribute()
-* el.className
+* el.setAttribute("要添加的属性名","属性值")
+* el.getAttribute("要获取的属性名")
+* el.removeAttribute("要移除的属性名")
+* el.hasAttribute("要获取的属性名")
+* el.className="类名"
 * el.id
-* el.classlist
+* el.classList.add("类名")
+* el.classList.remove("类名")
 
 
 ### 节点操作（node）
